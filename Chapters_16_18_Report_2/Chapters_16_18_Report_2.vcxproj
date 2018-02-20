@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="templates.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chapters_16_18_Report_2.cpp" />
