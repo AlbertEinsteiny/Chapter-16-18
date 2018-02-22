@@ -29,6 +29,11 @@ The third test shows a similar thing but using doubles
 The memory used in the functions does not cross between the different instantiations
 Also, to show that typedef does not work, the test for "custom" type uses the same memory that the integer uses
 and to show that memory is persistant for all calls of the function, the proof test is at the end
+
+things this shows
+- template type deduction
+- different instantiations for different types
+- static follows the different instantiations (same for classes and functions)
 */
 TEST(Templates, memory_string) {
 	string a = "Hello ";
@@ -73,4 +78,15 @@ TEST(Templates, memory_proof) {
 	string c = " Again!";
 	c = accumalate(c);
 	EXPECT_EQ(c, "Hello World! Again!");
+}
+
+/* The different overload functions with templates
+*/
+TEST(Templates, overloads) {
+	int a = 4;
+	EXPECT_EQ(overloaded(a), "Template - pass by reference");
+	double b = 4;
+	EXPECT_EQ(overloaded(b), "Template - pass by reference");
+	string c = "string";
+	EXPECT_EQ(overloaded(c), "regular overload - string");
 }

@@ -11,3 +11,16 @@ T accumalate(T a) {
 	memory += a;
 	return memory;
 }
+
+using std::string;
+template<typename T>
+string overloaded(T *a) {
+	return "Template - pointer";
+}
+template<typename T>
+string overloaded(T &&a) {
+	return "Template - pass by reference";
+}
+string overloaded(string a) {
+	return "regular overload - string";
+}
