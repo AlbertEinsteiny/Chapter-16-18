@@ -9,11 +9,11 @@ class mammal
 {
 protected:
 
-	int tiger;
-	int lion;
-	int zebra;
-	int monkey;
-	int buffalo;
+	int tiger = 0;
+	int lion = 0;
+	int zebra = 0;
+	int monkey = 0;
+	int buffalo = 0;
 };
 class mammal mammals;
 
@@ -23,11 +23,11 @@ class bird
 {
 protected:
 
-	float eagle;
-	float hawk;
-	float seagull;
-	float parrot;
-	float crow;
+	float eagle = 2.1;
+	float hawk = 2.1;
+	float seagull = 2.1;
+	float parrot = 2.1;
+	float crow = 2.1;
 };
 class bird birds;
 
@@ -36,11 +36,11 @@ class reptile
 {
 protected:
 
-	bool alligator;
-	bool snake;
-	bool lizard;
-	bool turtle;
-	bool crocodile;
+	bool alligator = 1;
+	bool snake = 1;
+	bool lizard = 1;
+	bool turtle = 1;
+	bool crocodile = 1;
 };
 class reptile reptiles;
 
