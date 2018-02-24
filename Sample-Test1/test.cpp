@@ -60,7 +60,7 @@ TEST(Templates, memory_double) {
 	EXPECT_EQ(b, 90);
 }
 typedef int not_an_int;
-TEST(Templates, memory_custom) {
+TEST(Templates, memory_custom) { // fails on purpose
 	not_an_int a = 4;
 	not_an_int b = 5;
 	a = accumalate(a);
@@ -81,12 +81,31 @@ TEST(Templates, memory_proof) {
 }
 
 /* The different overload functions with templates
+You can have overloaded function names even if you put a template on some
+Template functions are lower priority than specilized functions
+That makes the string use the hand-specified version that specificly takes a string, and not the template
 */
 TEST(Templates, overloads) {
 	int a = 4;
-	EXPECT_EQ(overloaded(a), "Template - pass by reference");
+	EXPECT_EQ(overloaded(a), "Template - pass by reference"); // templates work as expected
 	double b = 4;
 	EXPECT_EQ(overloaded(b), "Template - pass by reference");
 	string c = "string";
-	EXPECT_EQ(overloaded(c), "regular overload - string");
+	EXPECT_EQ(overloaded(c), "regular overload - string"); // but the string takes the specialized version and not the template
+}
+
+/*testing some things for variadic templates
+The book had an excersize for testing the sizes of things
+When testing the size of the variable sized argument, more arguments make it larger, even if the same type
+*/
+TEST(Templates, variadic_sizes) {
+	//test the size of the types
+	EXPECT_EQ(sizeof_types(42, 42.2, "42"), 3); //3 types
+	EXPECT_EQ(sizeof_types(42,43, 42.2, "42"), 4); //3 types (int,int,double,string)
+	EXPECT_EQ(sizeof_types(42, 43, 44), 3); // all the same type
+
+	//test the size of the variable input
+	EXPECT_EQ(sizeof_args(42, 42.2, "42"), 3); //3 arguments
+	EXPECT_EQ(sizeof_args(42, 43, 44), 3); // all the same type
+	EXPECT_EQ(sizeof_args(42), 1);
 }

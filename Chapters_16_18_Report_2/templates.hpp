@@ -24,3 +24,12 @@ string overloaded(T &&a) {
 string overloaded(string a) {
 	return "regular overload - string";
 }
+
+template<typename... others>
+int sizeof_types(others... args) {
+	return sizeof...(others);
+}
+template<typename... others>
+int sizeof_args(others... args) {
+	return sizeof...(args);
+}
