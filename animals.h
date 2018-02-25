@@ -49,10 +49,11 @@ namespace base_classes {
 	}
 }
 namespace bc = base_classes;
+namespace mam = bc::one;
 
 // derived class
 namespace derived_class {
-	class animal : protected bc::one::mammal, protected bc::two::bird, protected bc::three::reptile
+	class animal : protected mam::mammal, protected bc::two::bird, protected bc::three::reptile
 	{
 	public:
 		mammal::tiger;
