@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "../Chapters_16_18_Report_2/templates.hpp"
 
 using std::string;

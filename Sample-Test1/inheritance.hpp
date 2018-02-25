@@ -1,5 +1,6 @@
-#include "../Chapters_16_18_Report_2/stdafx.h"
-#include "../Chapters_16_18_Report_2/Chapters_16_18_Report_2.cpp"
+#include "pch.h"
+//#include "../Chapters_16_18_Report_2/Chapters_16_18_Report_2.cpp"
+#include "../Chapters_16_18_Report_2/animals.h"
 
 using namespace std;
 
@@ -24,31 +25,6 @@ public:
 	bool lizard = 1;
 	bool turtle = 1;
 	bool crocodile = 1;
-};
-
-// function template to work with all types
-template <class AnimalType>
-AnimalType pick_animal_class(AnimalType A)
-{
-	AnimalType Z;
-
-	if (A == 0)
-	{
-		cout << "this animal is a mammal" << endl;
-		Z = 0;
-	}
-	else if (A >= 2.0)
-	{
-		cout << "this animal is a bird" << endl;
-		Z = 2.1;
-	}
-	else if (A == 1)
-	{
-		cout << "this animal is a reptile" << endl;
-		Z = 1;
-	}
-
-	return Z;
 };
 
 

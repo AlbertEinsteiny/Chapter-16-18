@@ -2,27 +2,6 @@
 #include "animals.h"
 
 
-// function template to work with all types
-template <class AnimalType>
-AnimalType pick_animal_class(AnimalType A)
-{
-	if (A == 0)
-	{
-		cout << "this animal is a mammal" << endl;
-	}
-	else if (A >= 2.0)
-	{
-		cout << "this animal is a bird" << endl;
-	}
-	else if (A == 1)
-	{
-		cout << "this animal is a reptile" << endl;
-	}
-
-	return 0;
-};
-
-
 int main()
 {
 	// mammals
