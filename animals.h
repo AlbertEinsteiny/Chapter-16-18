@@ -1,97 +1,77 @@
-
 #include <iostream>
 
 using namespace std;
 
-
-// base class
-class mammal
-{
-protected:
-	// to be defined elsewhere
-	//virtual animal_type();
-
-
-	int tiger;
-	int lion;
-	int zebra;
-	int monkey;
-	int buffalo;
-};
-class mammal mammals;
-
-
-// base class
-class bird
-{
-public:
-
-	float eagle;
-	float hawk;
-	float seagull;
-	float parrot;
-	float crow;
-};
-class bird birds;
-
-// base class
-class reptile
-{
-protected:
-
-	bool alligator;
-	bool snake;
-	bool lizard;
-	bool turtle;
-	bool crocodile;
-};
-class reptile reptiles;
-
-// derived class
-class animal : protected mammal, protected bird, protected reptile
-{
-public:
-
-	// 3 different types
-	/*
-	int tiger;
-	int lion;
-	int zebra;
-	int monkey;
-	int buffalo;
-
-	float eagle;
-	float hawk;
-	float seagull;
-	float parrot;
-	float crow;
-
-	bool alligator;
-	bool snake;
-	bool lizard;
-	bool turtle;
-	crocodile;*/
-
-	//float birds.hawk = 5;
-
-	// function template to work with all types
-	template <typename A>
-	void pick_animal_class(A)
-	{
-		if (A == int)
+namespace base_classes {
+	// base class
+	namespace one {
+		class mammal
 		{
-			cout << "This animal is a mammal" << endl;
-		}
-		else if (A == float)
-		{
-			cout << "This animal is a bird" << endl;
-		}
-		else if (A == bool)
-		{
-			cout << "This animal is a reptile" << endl;
-		}
+		protected:
 
+			int tiger = 0;
+			int lion = 0;
+			int zebra = 0;
+			int monkey = 0;
+			int buffalo = 0;
+		};
+		class mammal mammals;
 	}
 
-};
-class animal animals;
+	// base class
+	namespace two {
+		class bird
+		{
+		protected:
+
+			float eagle = 2.1;
+			float hawk = 2.1;
+			float seagull = 2.1;
+			float parrot = 2.1;
+			float crow = 2.1;
+		};
+		class bird birds;
+	}
+
+	// base class
+	namespace three {
+		class reptile
+		{
+		protected:
+
+			bool alligator = 1;
+			bool snake = 1;
+			bool lizard = 1;
+			bool turtle = 1;
+			bool crocodile = 1;
+		};
+		class reptile reptiles;
+	}
+}
+namespace bc = base_classes;
+
+// derived class
+namespace derived_class {
+	class animal : protected bc::one::mammal, protected bc::two::bird, protected bc::three::reptile
+	{
+	public:
+		mammal::tiger;
+		using mammal::lion;
+		using mammal::zebra;
+		using mammal::monkey;
+		using mammal::buffalo;
+
+		using bird::eagle;
+		using bird::hawk;
+		using bird::seagull;
+		using bird::parrot;
+		using bird::crow;
+
+		using reptile::alligator;
+		using reptile::snake;
+		using reptile::lizard;
+		using reptile::turtle;
+		using reptile::crocodile;
+	};
+	class animal animals;
+}
