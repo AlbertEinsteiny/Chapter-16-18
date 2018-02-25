@@ -1,0 +1,8 @@
+﻿  stdafx.cpp
+  Chapters_16_18_Report_2.cpp
+f:\users\daniel\source\repos\chapters_16_18_report_2\chapters_16_18_report_2\animal.h(29): warning C4305: 'initializing': truncation from 'double' to 'float'
+f:\users\daniel\source\repos\chapters_16_18_report_2\chapters_16_18_report_2\animal.h(30): warning C4305: 'initializing': truncation from 'double' to 'float'
+f:\users\daniel\source\repos\chapters_16_18_report_2\chapters_16_18_report_2\animal.h(31): warning C4305: 'initializing': truncation from 'double' to 'float'
+f:\users\daniel\source\repos\chapters_16_18_report_2\chapters_16_18_report_2\animal.h(32): warning C4305: 'initializing': truncation from 'double' to 'float'
+f:\users\daniel\source\repos\chapters_16_18_report_2\chapters_16_18_report_2\animal.h(33): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Chapters_16_18_Report_2.vcxproj -> F:\Users\Daniel\source\repos\Chapters_16_18_Report_2\Debug\Chapters_16_18_Report_2.exe
